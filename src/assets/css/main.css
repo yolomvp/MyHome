@@ -79,7 +79,7 @@
 
 .cost__number {
   font-size: 10px;
-  color: blue;
+  color: yellow;
 }
 
 .cost__price {
@@ -105,7 +105,7 @@
   width: 100px;
 }
 
-.box__push button {
+.box__push  {
   height: 50px;
   width: 300px;
   background-color: rgb(119, 119, 119);
