@@ -21,7 +21,7 @@
           </div>
           <div class="box-container__sidebar">
             <div class="grid">
-              <input class="grid__input" type="text" placeholder="Внесите деньги">
+              <input class="grid__input" type="text" :placeholder="placeholder">
               <button>Внести</button>
             </div>
             <div class="grid">
@@ -62,7 +62,7 @@ export default {
             imagePath: './images/ruzik.png',
             id: 3,
             price: 100,
-            count: 0,
+            count: 5,
           },
           {
             imagePath: './images/chocoPie.png',
@@ -88,7 +88,7 @@ export default {
             imagePath: './images/ruzikBig.png',
             id: 7,
             price: 250,
-            count: 0,
+            count: 5,
           },
           {
             imagePath: './images/lays.png',
@@ -114,7 +114,7 @@ export default {
             imagePath: './images/marmeladChup.png',
             id: 11,
             price: 35,
-            count: 0,          
+            count: 5,          
           },
           {
             imagePath: './images/laysNew.png',
@@ -128,7 +128,7 @@ export default {
             imagePath: './images/haribo.png',
             id: 13,
             price: 30,
-            count: 0,          
+            count: 5,          
           },
           {
             imagePath: './images/m&m.png',
@@ -149,13 +149,16 @@ export default {
             count: 5,          
           },
         ],
-      ]
+      ],
+      placeholder: 'Внесите деньги',
+
     }
   },
   methods: {
     buyItem (item) {
-
-    }
+      
+    },
+    // insert()
   }
 }
 </script>
