@@ -59,7 +59,7 @@ export default {
             count: 5,
           },
           {
-            imagePath: '',
+            imagePath: './images/ruzik.png',
             id: 3,
             price: 100,
             count: 0,
@@ -85,7 +85,7 @@ export default {
             count: 5,
           },
           {
-            imagePath: '',
+            imagePath: './images/ruzikBig.png',
             id: 7,
             price: 250,
             count: 0,
@@ -111,7 +111,7 @@ export default {
             count: 5,         
           },
           {
-            imagePath: '',
+            imagePath: './images/marmeladChup.png',
             id: 11,
             price: 35,
             count: 0,          
@@ -125,7 +125,7 @@ export default {
         ],
 
         [{
-            imagePath: '',
+            imagePath: './images/haribo.png',
             id: 13,
             price: 30,
             count: 0,          
