@@ -155,8 +155,10 @@ export default {
     }
   },
   methods: {
-    buyItem (item) {
-      
+    buyItem(item) {
+     console.log(item)
+     if (item.count === 0) return
+     item.count -= 1
     },
     // insert()
   }
