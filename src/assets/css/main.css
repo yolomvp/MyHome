@@ -100,6 +100,13 @@
   width: 100px;
 }
 
+.grid__value {
+  color: yellow;
+  height: 14px;
+  width: 100px;
+  background-color: blue;
+}
+
 .box__push  {
   height: 50px;
   width: 300px;

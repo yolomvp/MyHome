@@ -21,12 +21,16 @@
           </div>
           <div class="box-container__sidebar">
             <div class="grid">
-              <input class="grid__input" type="text" :placeholder="placeholder">
-              <button>Внести</button>
+              <div class="grid__value">{{ userBalance }}</div>
+              <button @click="insert()">Внести</button>
+              <input class="grid__input" 
+              type="text"
+              :placeholder="placeholder"
+              v-model="inputValue"
+              >
             </div>
             <div class="grid">
-              <input class="grid__input" type="text" placeholder="Заберите сдачу">
-              <button>Забрать</button>
+              <button @click="getСhange()">Забрать сдачу</button>
             </div>
           </div>
         </div>
@@ -151,16 +155,48 @@ export default {
         ],
       ],
       placeholder: 'Внесите деньги',
-
+      userBalance: 0,
+      inputValue: null,
+      machineBalance: {
+        1: 200,
+        5: 200,
+        10: 100,
+        50: 20,
+        100: 10,
+        500: 2,
+      }
     }
   },
   methods: {
     buyItem(item) {
-     console.log(item)
-     if (item.count === 0) return
-     item.count -= 1
+     if (item.count && this.userBalance >= item.price) {
+      item.count -= 1
+      this.userBalance -= item.price
+     }
     },
-    // insert()
+
+    insert() {
+      if (['50', '100', '500', '1000',].includes(this.inputValue)) {
+        if (this.inputValue != 1000) {
+        this.machineBalance[this.inputValue] += 1 }
+        this.userBalance += +this.inputValue
+        this.inputValue = null
+      }
+    },
+    getСhange() {
+      const change = {}
+      for (const key in this.machineBalance) {
+        if (this.userBalance / key >= 1) {
+          const billsNumber = Math.floor(this.userBalance / key)
+          if (this.machineBalance[key]) {
+            change[key] = this.machineBalance[key] >= billsNumber ? billsNumber : this.machineBalance[key]
+            this.userBalance -= change[key] * key
+            this.machineBalance[key] -= change[key]
+          }
+        }
+      }
+      console.log(`RAZMEN ${change}`)
+    },
   }
 }
 </script>
