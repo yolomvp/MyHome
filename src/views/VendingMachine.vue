@@ -195,7 +195,7 @@ export default {
           }
         }
       }
-      console.log(`RAZMEN ${change}`)
+      console.log(change)
     },
   }
 }
