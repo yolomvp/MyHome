@@ -37,6 +37,11 @@
         <div class="box__push"></div>
       </div>
     </div>
+    <ul class="list">
+      <!-- <li class="list__item" v-for="purchased in purchasedItems">
+        {{ purchased  }}
+      </li> -->
+    </ul>
   </div>
 </template>
 
@@ -158,13 +163,95 @@ export default {
       userBalance: 0,
       inputValue: null,
       machineBalance: {
-        1: 200,
-        5: 200,
-        10: 100,
-        50: 20,
-        100: 10,
         500: 2,
-      }
+        100: 10,
+        50: 20,
+        10: 100,
+        5: 200,
+        1: 200,
+      },
+      purchasedItems: [
+        {
+          id:1,
+          purchasedName: 'cheetos',
+          count: 0,
+        },
+        {
+          id:2,
+          purchasedName: 'cheetosNew',
+          count: 0,
+        },
+        {
+          id:3,
+          purchasedName: 'ruzik',
+          count: 0,
+        },
+        {
+          id:4,
+          purchasedName: 'chocoPie',
+          count: 0,
+        },
+        {
+          id:5,
+          purchasedName: 'hrusTeam',
+          count: 0,
+        },
+        {
+          id:6,
+          purchasedName: 'hrusTeamNew',
+          count: 0,
+        },
+        {
+          id:7,
+          purchasedName: 'ruzikBig',
+          count: 0,
+        },
+        {
+          id:8,
+          purchasedName: 'lays',
+          count: 0,
+        },
+        {
+          id:9,
+          purchasedName: 'laysBecon',
+          count: 0,
+        },
+        {
+          id:10,
+          purchasedName: 'laysClassic',
+          count: 0,
+        },
+        {
+          id:11,
+          purchasedName: 'marmeladChup',
+          count: 0,
+        },
+        {
+          id:12,
+          purchasedName: 'laysNew',
+          count: 0,
+        },
+        {
+          id:13,
+          purchasedName: 'haribo',
+          count: 0,
+        },
+        {
+          id:14,
+          purchasedName: 'm&m',
+          count: 0,
+        },
+        {
+          id:15,
+          purchasedName: 'tarallini',
+          count: 0,
+        },
+        {
+          id:16,
+          purchasedName: 'taralliniNew',
+          count: 0,
+        },
+      ]
     }
   },
   methods: {
@@ -173,6 +260,12 @@ export default {
       item.count -= 1
       this.userBalance -= item.price
      }
+    //  for (const purchased of this.purchasedItems) {
+    //   if (item.id === purchased.id) {
+    //   purchased.count += 1
+    // } else {
+    //   purchasedItems.push(purchased)
+    // }
     },
 
     insert() {
@@ -195,7 +288,7 @@ export default {
           }
         }
       }
-      console.log(change)
+      alert(`Ваша сдача${JSON.stringify(change)}`)
     },
   }
 }
